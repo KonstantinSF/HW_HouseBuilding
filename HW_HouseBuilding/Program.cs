@@ -62,7 +62,11 @@ namespace HW_HouseBuilding
         {
             if (this.windows[3].IsComplete)
             {
-                WriteLine("House done!");
+                WriteLine("*********House done!*********");
+                WriteLine("             /\\");
+                WriteLine("            /\\ \\");
+                WriteLine("           /__\\/");
+                WriteLine("           |__|/");
             }
             else WriteLine("House is in progeress...");
         }
@@ -167,7 +171,8 @@ namespace HW_HouseBuilding
             if (house.windows[1].IsComplete) PercentDone += 100 / 11;
             if (house.windows[2].IsComplete) PercentDone += 100 / 11;
             if (house.windows[3].IsComplete) PercentDone += 100 / 11;
-            WriteLine($"{PercentDone}% of the House done!!!\n"); 
+            WriteLine($"{PercentDone}% of the House done!!!\n");
+            if (PercentDone == 100) house.HouseDone(); 
         }
     }
     internal class Program
@@ -181,26 +186,24 @@ namespace HW_HouseBuilding
             //walls1[1] = new Wall();
             //walls1[2] = new Wall();
             //walls1[3] = new Wall();
-            House h1 = new House();
-            Worker worker1 = new Worker();
-            worker1.DoingOnePart(h1);
-            WriteLine(h1);
-            h1.HouseDone();
-            worker1.DoingOnePart(h1);
-            WriteLine(h1);
-            h1.HouseDone();
-            worker1.DoingOnePart(h1);
-            WriteLine(h1);
-            h1.HouseDone();
-            worker1.DoingOnePart(h1);
-            WriteLine(h1);
-            h1.HouseDone();
-            worker1.DoingOnePart(h1);
-            WriteLine(h1);
-            h1.HouseDone();
-            TeamLeader Lider = new TeamLeader();
-            Lider.DoingOnePart(h1);
+            //House h1 = new House();
+            //Worker worker1 = new Worker();
+            //worker1.DoingOnePart(h1);
+            //WriteLine(h1);
+            //h1.HouseDone();
+            //worker1.DoingOnePart(h1);
+            //WriteLine(h1);
+            //h1.HouseDone();
+            //worker1.DoingOnePart(h1);
+            //WriteLine(h1);
+            //h1.HouseDone();
+            //worker1.DoingOnePart(h1);
+            //WriteLine(h1);
+            //h1.HouseDone();
             
+            //h1.HouseDone();
+            //TeamLeader Lider = new TeamLeader();
+            //Lider.DoingOnePart(h1);
         }
     }
 }
