@@ -141,7 +141,7 @@ namespace HW_HouseBuilding
             string str = null;
             if (!house.basement.IsComplete)
             {
-                house.basement.IsComplete = true; ;  str = "Фундамент заложил";
+                house.basement.IsComplete = true; str = "Фундамент заложил";
             }
             else if (!house.walls[0].IsComplete)
             {
@@ -196,19 +196,19 @@ namespace HW_HouseBuilding
                 "********************TeamLider REPORT***********************\n");
             WriteLine(house);
             double PercentDone = 0;
-            if (house.basement.IsComplete) PercentDone += 9.1;
-            if (house.walls[0].IsComplete) PercentDone += 9.1;
-            if (house.walls[1].IsComplete) PercentDone += 9.1;
-            if (house.walls[2].IsComplete) PercentDone += 9.1;
-            if (house.walls[3].IsComplete) PercentDone += 9.1;
+                if (house.basement.IsComplete) PercentDone += 9.1;
+            for (int i = 0; i < house.walls.Length; i++)
+            {
+                if (house.walls[i].IsComplete) PercentDone += 9.1;
+            }
                 if (house.door.IsComplete) PercentDone += 9.1;
                 if (house.roof.IsComplete) PercentDone += 9.1;
-          if (house.windows[0].IsComplete) PercentDone += 9.1;
-          if (house.windows[1].IsComplete) PercentDone += 9.1;
-          if (house.windows[2].IsComplete) PercentDone += 9.1;
-          if (house.windows[3].IsComplete) PercentDone += 9.0;
-            WriteLine($"{PercentDone}% of the House done!!!\n");
-            if (house.windows[3].IsComplete) house.HouseDone();
+            for (int i = 0; i < house.windows.Length; i++)
+            {
+                if (house.windows[i].IsComplete) PercentDone += 9.1;
+            }
+                WriteLine($"{PercentDone}% of the House done!!!\n");
+                if (house.windows[3].IsComplete) house.HouseDone();
         }
     }
     internal class Program
