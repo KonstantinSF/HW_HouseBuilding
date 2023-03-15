@@ -138,17 +138,54 @@ namespace HW_HouseBuilding
     {
         public virtual void DoingOnePart(House house)
         {
-            if (!house.basement.IsComplete) house.basement.IsComplete = true;
-            else if (!house.walls[0].IsComplete) house.walls[0].IsComplete = true;
-            else if (!house.walls[1].IsComplete) house.walls[1].IsComplete = true;
-            else if (!house.walls[2].IsComplete) house.walls[2].IsComplete = true;
-            else if (!house.walls[3].IsComplete) house.walls[3].IsComplete = true;
-            else if (!house.door.IsComplete) house.door.IsComplete = true;
-            else if (!house.roof.IsComplete) house.roof.IsComplete = true;
-            else if (!house.windows[0].IsComplete) house.windows[0].IsComplete = true;
-            else if (!house.windows[1].IsComplete) house.windows[1].IsComplete = true;
-            else if (!house.windows[2].IsComplete) house.windows[2].IsComplete = true;
-            else if (!house.windows[3].IsComplete) house.windows[3].IsComplete = true;
+            string str = null;
+            if (!house.basement.IsComplete)
+            {
+                house.basement.IsComplete = true; ;  str = "Фундамент заложил";
+            }
+            else if (!house.walls[0].IsComplete)
+            {
+                house.walls[0].IsComplete = true; str = "Первая стена готова";
+            }
+            else if (!house.walls[1].IsComplete)
+            {
+                house.walls[1].IsComplete = true; str = "Вторая стена готова";
+            }
+            else if (!house.walls[2].IsComplete)
+            {
+                house.walls[2].IsComplete = true; str = "Бог любит Троицу, третья стена готова";
+            }
+            else if (!house.walls[3].IsComplete)
+            {
+                house.walls[3].IsComplete = true; str = "Все стены завершил";
+            }
+            else if (!house.door.IsComplete)
+            {
+                house.door.IsComplete = true; str = "Никакой опасный зверь не проникнет в эту дверь! Дверь готова";
+            }
+            else if (!house.roof.IsComplete)
+            {
+                house.roof.IsComplete = true; str = "До дождя и под крышу завели";
+            }
+            else if (!house.windows[0].IsComplete)
+            {
+                house.windows[0].IsComplete = true; str = "Первое окно прорубил, как Петр I  - в Европу";
+            }
+            else if (!house.windows[1].IsComplete)
+            {
+                house.windows[1].IsComplete = true; str = "Два окна - пара";
+            }
+            else if (!house.windows[2].IsComplete)
+            {
+                house.windows[2].IsComplete = true; str = "И третье окно сделано";
+            }
+            else if (!house.windows[3].IsComplete)
+            {
+                house.windows[3].IsComplete = true; str = "Закончил дом";
+            }
+            else WriteLine("Дом уже построен, я за зарплатой..."); 
+            if (str!=null) WriteLine($"Поработал! {str}!");
+            if (str =="Закончил дом") house.HouseDone();
         }
     }
     class TeamLeader : Worker, IWorker
@@ -156,54 +193,44 @@ namespace HW_HouseBuilding
         public override void DoingOnePart(House house)
         {
             WriteLine("Are you crazy?! I'm the lazy boss, only paperwork for me!!!\n" +
-                "********************TeamLider REPORT****************\n");
-            //base.DoingOnePart(house);
+                "********************TeamLider REPORT***********************\n");
             WriteLine(house);
             double PercentDone = 0;
-            if (house.basement.IsComplete) PercentDone += 100 / 11; 
-            if (house.walls[0].IsComplete) PercentDone += 100 / 11; 
-            if (house.walls[1].IsComplete) PercentDone += 100 / 11; 
-            if (house.walls[2].IsComplete) PercentDone += 100 / 11; 
-            if (house.walls[3].IsComplete) PercentDone += 100 / 11; 
-            if (house.door.IsComplete) PercentDone += 100 / 11; 
-            if (house.roof.IsComplete) PercentDone += 100 / 11;
-            if (house.windows[0].IsComplete) PercentDone += 100 / 11;
-            if (house.windows[1].IsComplete) PercentDone += 100 / 11;
-            if (house.windows[2].IsComplete) PercentDone += 100 / 11;
-            if (house.windows[3].IsComplete) PercentDone += 100 / 11;
+            if (house.basement.IsComplete) PercentDone += 9.1;
+            if (house.walls[0].IsComplete) PercentDone += 9.1;
+            if (house.walls[1].IsComplete) PercentDone += 9.1;
+            if (house.walls[2].IsComplete) PercentDone += 9.1;
+            if (house.walls[3].IsComplete) PercentDone += 9.1;
+                if (house.door.IsComplete) PercentDone += 9.1;
+                if (house.roof.IsComplete) PercentDone += 9.1;
+          if (house.windows[0].IsComplete) PercentDone += 9.1;
+          if (house.windows[1].IsComplete) PercentDone += 9.1;
+          if (house.windows[2].IsComplete) PercentDone += 9.1;
+          if (house.windows[3].IsComplete) PercentDone += 9.0;
             WriteLine($"{PercentDone}% of the House done!!!\n");
-            if (PercentDone == 100) house.HouseDone(); 
+            if (house.windows[3].IsComplete) house.HouseDone();
         }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-            //Basement base1 = new Basement();
-            ////base1.IsComplete = false; 
-            //Wall[] walls1 = new Wall[4];
-            //walls1[0] = new Wall();
-            //walls1[1] = new Wall();
-            //walls1[2] = new Wall();
-            //walls1[3] = new Wall();
-            //House h1 = new House();
-            //Worker worker1 = new Worker();
-            //worker1.DoingOnePart(h1);
-            //WriteLine(h1);
-            //h1.HouseDone();
-            //worker1.DoingOnePart(h1);
-            //WriteLine(h1);
-            //h1.HouseDone();
-            //worker1.DoingOnePart(h1);
-            //WriteLine(h1);
-            //h1.HouseDone();
-            //worker1.DoingOnePart(h1);
-            //WriteLine(h1);
-            //h1.HouseDone();
-            
-            //h1.HouseDone();
-            //TeamLeader Lider = new TeamLeader();
-            //Lider.DoingOnePart(h1);
+            House h1 = new House();
+            Worker worker1 = new Worker();
+            TeamLeader Lider = new TeamLeader();
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            worker1.DoingOnePart(h1);
+            Lider.DoingOnePart(h1);
         }
     }
 }
