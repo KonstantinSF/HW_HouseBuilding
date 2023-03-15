@@ -34,30 +34,30 @@ namespace HW_HouseBuilding
         //{
         //    get { return walls.Length; }
         //}
-        public Window this[int index]
-        {
-            get
-            {
-                if (index >= 0 && index < windows.Length) return windows[index];
-                else throw new IndexOutOfRangeException();
-            }
-            set
-            {
-                windows[index] = value;
-            }
-        }
-        public Wall this[uint index]
-        {
-            get
-            {
-                if (index >= 0 && index < walls.Length) return walls[index];
-                else throw new IndexOutOfRangeException();
-            }
-            set
-            {
-                walls[index] = value;
-            }
-        }
+        //public Window this[int index]
+        //{
+        //    get
+        //    {
+        //        if (index >= 0 && index < windows.Length) return windows[index];
+        //        else throw new IndexOutOfRangeException();
+        //    }
+        //    set
+        //    {
+        //        windows[index] = value;
+        //    }
+        //}
+        //public Wall this[uint index]
+        //{
+        //    get
+        //    {
+        //        if (index >= 0 && index < walls.Length) return walls[index];
+        //        else throw new IndexOutOfRangeException();
+        //    }
+        //    set
+        //    {
+        //        walls[index] = value;
+        //    }
+        //}
         public void HouseDone()
         {
             if (this.windows[3].IsComplete)
@@ -195,7 +195,7 @@ namespace HW_HouseBuilding
             WriteLine("Are you crazy?! I'm the lazy boss, only paperwork for me!!!\n" +
                 "********************TeamLider REPORT***********************\n");
             WriteLine(house);
-            double PercentDone = 0;
+                double PercentDone = 0;
                 if (house.basement.IsComplete) PercentDone += 9.1;
             for (int i = 0; i < house.walls.Length; i++)
             {
@@ -207,7 +207,7 @@ namespace HW_HouseBuilding
             {
                 if (house.windows[i].IsComplete) PercentDone += 9.1;
             }
-                WriteLine($"{PercentDone}% of the House done!!!\n");
+                WriteLine($"{Math.Round(PercentDone)}% of the House done!!!\n");
                 if (house.windows[3].IsComplete) house.HouseDone();
         }
     }
